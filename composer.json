@@ -1,7 +1,14 @@
 {
-    "name":        "nao-pon/elfinder-nightly",
-    "description": "File manager for web",
-    "license":     "BSD-3-Clause",
+    "name": "dwolke/elf-connector",
+    "description": "File manager for web (PHP Connector)",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "excel",
+        "spreadsheet",
+        "reader",
+        "importer"
+    ],
+    "type": "library",
     "homepage":    "http://elfinder.org",
     "authors": [
         {
@@ -24,8 +31,9 @@
             "homepage": "https://github.com/Studio-42/elFinder/contributors"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
-        "php": ">=5.2"
+        "php": ">=5.4"
     },
     "autoload": {
         "classmap": ["php"]
