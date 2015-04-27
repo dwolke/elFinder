@@ -1,9 +1,11 @@
 <?php
-
 /**
  * Simple elFinder driver for IIS FTP
  *
  **/
+
+namespace ElfConnector;
+
 class elFinderVolumeFTPIIS extends elFinderVolumeFTP {
 	
 	/**

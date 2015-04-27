@@ -1,13 +1,15 @@
 <?php
-
-elFinder::$netDrivers['dropbox'] = 'Dropbox';
-
 /**
  * Simple elFinder driver for FTP
  *
  * @author Dmitry (dio) Levashov
  * @author Cem (discofever)
  **/
+
+namespace ElfConnector;
+
+elFinder::$netDrivers['dropbox'] = 'Dropbox';
+
 class elFinderVolumeDropbox extends elFinderVolumeDriver {
 
 	/**

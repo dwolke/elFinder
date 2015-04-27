@@ -1,10 +1,12 @@
 <?php
-
 /**
  * Simple elFinder driver for MySQL.
  *
  * @author Dmitry (dio) Levashov
  **/
+
+namespace ElfConnector;
+
 class elFinderVolumeMySQL extends elFinderVolumeDriver {
 	
 	/**

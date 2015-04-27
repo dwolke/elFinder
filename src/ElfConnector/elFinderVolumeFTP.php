@@ -1,4 +1,12 @@
 <?php
+/**
+ * Simple elFinder driver for FTP
+ *
+ * @author Dmitry (dio) Levashov
+ * @author Cem (discofever)
+ **/
+
+namespace ElfConnector;
 
 function chmodnum($chmod) {
     $trans = array('-' => '0', 'r' => '4', 'w' => '2', 'x' => '1');
@@ -9,12 +17,7 @@ function chmodnum($chmod) {
 
 elFinder::$netDrivers['ftp'] = 'FTP';
 
-/**
- * Simple elFinder driver for FTP
- *
- * @author Dmitry (dio) Levashov
- * @author Cem (discofever)
- **/
+
 class elFinderVolumeFTP extends elFinderVolumeDriver {
 	
 	/**

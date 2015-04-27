@@ -1,11 +1,13 @@
 <?php
-
 /**
  * elFinder driver for local filesystem.
  *
  * @author Dmitry (dio) Levashov
  * @author Troex Nevelin
  **/
+
+namespace ElfConnector;
+
 class elFinderVolumeLocalFileSystem extends elFinderVolumeDriver {
 	
 	/**

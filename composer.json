@@ -36,6 +36,8 @@
         "php": ">=5.4"
     },
     "autoload": {
-        "classmap": ["php"]
+        "psr-0": {
+            "ElfConnector": "src/"
+        }
     }
 }

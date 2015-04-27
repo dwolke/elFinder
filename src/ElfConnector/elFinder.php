@@ -1,5 +1,4 @@
 <?php
-
 /**
  * elFinder - file manager for web.
  * Core class.
@@ -9,6 +8,13 @@
  * @author Troex Nevelin
  * @author Alexey Sukhotin
  **/
+
+namespace ElfConnector;
+
+use ElfConnector\elFinderVolumeDriver;
+//use ElfConnector\elFinderVolumeLocalFileSystem;
+
+
 class elFinder {
 	
 	/**
@@ -224,6 +230,8 @@ class elFinder {
 	const ERROR_ARCHIVE_EXEC 	= 'errArchiveExec';
 	const ERROR_EXTRACT_EXEC 	= 'errExtractExec';
 
+
+
 	/**
 	 * Constructor
 	 *
@@ -232,6 +240,7 @@ class elFinder {
 	 * @author Dmitry (dio) Levashov
 	 **/
 	public function __construct($opts) {
+
 		if (session_id() == '') {
 			session_start();
 		}
@@ -301,7 +310,7 @@ class elFinder {
 
 		// "mount" volumes
 		foreach ($opts['roots'] as $i => $o) {
-			$class = 'elFinderVolume'.(isset($o['driver']) ? $o['driver'] : '');
+			$class = __NAMESPACE__ . '\\' . 'elFinderVolume'.(isset($o['driver']) ? $o['driver'] : '');
 
 			if (class_exists($class)) {
 				$volume = new $class();
@@ -599,18 +608,38 @@ class elFinder {
 	 * @author Naoki Sawada
 	 */
 	protected function getPluginInstance($name, $opts = array()) {
+
 		$key = strtolower($name);
-		if (! isset($this->plugins[$key])) {
-			$p_file = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'plugins' . DIRECTORY_SEPARATOR . $name . DIRECTORY_SEPARATOR . 'plugin.php';
-			if (is_file($p_file)) {
-				require_once $p_file;
-				$class = 'elFinderPlugin' . $name;
+
+		// if (! isset($this->plugins[$key])) {
+
+		// 	$p_file = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'plugins' . DIRECTORY_SEPARATOR . $name . DIRECTORY_SEPARATOR . 'plugin.php';
+
+		// 	if (is_file($p_file)) {
+
+		// 		require_once $p_file;
+		// 		$class = 'elFinderPlugin' . $name;
+		// 		$this->plugins[$key] = new $class($opts);
+
+		// 	} else {
+		// 		$this->plugins[$key] = false;
+		// 	}
+
+		// }
+		
+		if (!isset($this->plugins[$key])) {
+
+			$this->plugins[$key] = false;
+			$class = __NAMESPACE__ . '\\Plugins\\' . $name;
+
+			if (class_exists($class)) {
 				$this->plugins[$key] = new $class($opts);
-			} else {
-				$this->plugins[$key] = false;
 			}
+
 		}
+
 		return $this->plugins[$key];
+
 	}
 
 	/***************************************************************************/
@@ -660,7 +689,7 @@ class elFinder {
 		}
 		
 		$driver   = isset(self::$netDrivers[$protocol]) ? self::$netDrivers[$protocol] : '';
-		$class    = 'elfindervolume'.$driver;
+		$class    = __NAMESPACE__ . '\\' . 'elfindervolume'.$driver;
 
 		if (!class_exists($class)) {
 			return array('error' => $this->error(self::ERROR_NETMOUNT, $args['host'], self::ERROR_NETMOUNT_NO_DRIVER));

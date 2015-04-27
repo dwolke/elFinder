@@ -51,7 +51,8 @@ Requirements
 
 ### Server
  * Any web server
- * PHP 5.2+ (for thumbnails - mogrify utility or GD/Imagick module)
+ * PHP 5.3.3+ (for autoloading, thumbnails - mogrify utility or GD/Imagick module)
+
 
 Downloads
 ------------

@@ -11,6 +11,9 @@
  * @author Troex Nevelin
  * @author Alexey Sukhotin
  **/
+
+namespace ElfConnector;
+
 abstract class elFinderVolumeDriver {
 	
 	/**
@@ -730,15 +733,23 @@ abstract class elFinderVolumeDriver {
 		// based on Alexey Sukhotin idea and patch: http://elrte.org/redmine/issues/163
 		// file must be in file directory or in parent one 
 		if ($this->mimeDetect == 'internal' && !self::$mimetypesLoaded) {
+
 			self::$mimetypesLoaded = true;
 			$this->mimeDetect = 'internal';
 			$file = false;
+
 			if (!empty($this->options['mimefile']) && file_exists($this->options['mimefile'])) {
+
 				$file = $this->options['mimefile'];
+
 			} elseif (file_exists(dirname(__FILE__).DIRECTORY_SEPARATOR.'mime.types')) {
+
 				$file = dirname(__FILE__).DIRECTORY_SEPARATOR.'mime.types';
+
 			} elseif (file_exists(dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'mime.types')) {
+
 				$file = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'mime.types';
+
 			}
 
 			if ($file && file_exists($file)) {
