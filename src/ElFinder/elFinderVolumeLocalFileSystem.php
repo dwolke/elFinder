@@ -6,7 +6,7 @@
  * @author Troex Nevelin
  **/
 
-namespace ElfConnector;
+namespace ElFinder;
 
 class elFinderVolumeLocalFileSystem extends elFinderVolumeDriver {
 	

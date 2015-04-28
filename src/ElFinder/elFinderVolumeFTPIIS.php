@@ -4,7 +4,7 @@
  *
  **/
 
-namespace ElfConnector;
+namespace ElFinder;
 
 class elFinderVolumeFTPIIS extends elFinderVolumeFTP {
 	

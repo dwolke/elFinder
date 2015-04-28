@@ -17,8 +17,8 @@ if (file_exists('../vendor/autoload.php')) {
   require_once __DIR__ . '/../vendor/autoload.php'; 
 }
 
-use ElfConnector\elFinderConnector;
-use ElfConnector\elFinder;
+use ElFinder\elFinderConnector;
+use ElFinder\elFinder;
 
 function debug($o)
 {

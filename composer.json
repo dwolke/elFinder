@@ -1,12 +1,9 @@
 {
-    "name": "dwolke/elf-connector",
+    "name": "dwolke/el-finder",
     "description": "File manager for web (PHP Connector)",
     "license": "BSD-3-Clause",
     "keywords": [
-        "excel",
-        "spreadsheet",
-        "reader",
-        "importer"
+        "filemanager"
     ],
     "type": "library",
     "homepage":    "http://elfinder.org",
@@ -33,11 +30,11 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.4"
+        "php": ">=5.3.3",
     },
     "autoload": {
         "psr-0": {
-            "ElfConnector": "src/"
+            "ElFinder": "src/"
         }
     }
 }

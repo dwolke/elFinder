@@ -9,10 +9,10 @@
  * @author Alexey Sukhotin
  **/
 
-namespace ElfConnector;
+namespace ElFinder;
 
-use ElfConnector\elFinderVolumeDriver;
-//use ElfConnector\elFinderVolumeLocalFileSystem;
+use ElFinder\elFinderVolumeDriver;
+//use ElFinder\elFinderVolumeLocalFileSystem;
 
 
 class elFinder {

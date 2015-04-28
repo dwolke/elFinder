@@ -6,7 +6,7 @@
  * @author Cem (discofever)
  **/
 
-namespace ElfConnector;
+namespace ElFinder;
 
 elFinder::$netDrivers['dropbox'] = 'Dropbox';
 

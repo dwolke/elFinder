@@ -8,7 +8,7 @@
  * @author Alexey Sukhotin
  * */
 
-namespace ElfConnector;
+namespace ElFinder;
 
 class elFinderVolumeS3 extends elFinderVolumeDriver {
 

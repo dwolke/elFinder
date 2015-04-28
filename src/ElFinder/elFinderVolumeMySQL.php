@@ -5,7 +5,7 @@
  * @author Dmitry (dio) Levashov
  **/
 
-namespace ElfConnector;
+namespace ElFinder;
 
 class elFinderVolumeMySQL extends elFinderVolumeDriver {
 	

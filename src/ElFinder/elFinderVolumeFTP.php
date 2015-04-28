@@ -6,7 +6,7 @@
  * @author Cem (discofever)
  **/
 
-namespace ElfConnector;
+namespace ElFinder;
 
 function chmodnum($chmod) {
     $trans = array('-' => '0', 'r' => '4', 'w' => '2', 'x' => '1');

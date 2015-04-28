@@ -5,8 +5,8 @@ if (file_exists('../vendor/autoload.php')) {
   require_once __DIR__ . '/../vendor/autoload.php'; 
 }
 
-use ElfConnector\elFinderConnector;
-use ElfConnector\elFinder;
+use ElFinder\elFinderConnector;
+use ElFinder\elFinder;
 
 
 /**
@@ -28,7 +28,7 @@ function access($attr, $path, $data, $volume) {
 // https://github.com/Studio-42/elFinder/wiki/Connector-configuration-options
 $opts = array(
   
-  'debug' => true,
+  'debug' => false,
 
   // 'bind' => array(
   //  'upload.presave' => array(
@@ -40,8 +40,9 @@ $opts = array(
     array(
 
       'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
-      'path'          => '../files/',         // path to files (REQUIRED)
-      'URL'           => dirname($_SERVER['PHP_SELF']) . '/../files/', // URL to files (REQUIRED)
+      'path'          => '../public/files/',         // path to files (REQUIRED)
+      'startPath'     => '../public/files/',  // ???
+      'URL'           => dirname($_SERVER['PHP_SELF']) . '/../public/files/', // URL to files (REQUIRED)
       'accessControl' => 'access',             // disable and hide dot starting files (OPTIONAL)
       'mimeDetect'    => 'internal',
 

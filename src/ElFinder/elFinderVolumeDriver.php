@@ -12,7 +12,7 @@
  * @author Alexey Sukhotin
  **/
 
-namespace ElfConnector;
+namespace ElFinder;
 
 abstract class elFinderVolumeDriver {
 	

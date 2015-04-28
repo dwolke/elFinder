@@ -9,7 +9,7 @@
  * @license New BSD
  */
 
-namespace ElfConnector\Plugins;
+namespace ElFinder\Plugins;
 
 class AutoResize {
 
